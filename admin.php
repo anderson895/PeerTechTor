@@ -19,7 +19,7 @@
     <div class="bg-white shadow-lg rounded-lg w-full max-w-sm p-6">
         <div class="text-center mb-4">
             <a href="index.php">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiQc01tubeOKno4VlBcUlZ-OEjad8ChfAYOw&s" alt="Logo" class="mx-auto w-20">
+                <img src="assets/logo.webp" alt="Logo" class="mx-auto w-20">
             </a>
         </div>
         
