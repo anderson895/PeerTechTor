@@ -46,7 +46,7 @@
                         <span class="material-icons text-5xl">school</span>
                     </div>
                     <h5 class="text-lg font-semibold">Student</h5>
-                    <a href="teacher.php" class="mt-4 inline-block bg-green-500 text-white px-5 py-2 rounded-lg hover:bg-green-600 transition">Login As Student</a>
+                    <a href="student.php" class="mt-4 inline-block bg-green-500 text-white px-5 py-2 rounded-lg hover:bg-green-600 transition">Login As Student</a>
                 </div>
             </div>
         </div>
