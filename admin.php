@@ -24,7 +24,7 @@
         </div>
         
         <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">
-            <i class="bi bi-person-badge"></i> Guidance Counselor/Principal Login
+            <i class="bi bi-person-badge"></i> Guidance Counselor/Principal
         </h3>
         
         <form id="frmLoginGuidance Counselor/Principal">

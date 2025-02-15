@@ -24,7 +24,7 @@
         </div>
         
         <h3 class="text-xl font-semibold text-center mb-4 text-gray-700">
-            <i class="bi bi-person-badge"></i> Student Login
+            <i class="bi bi-person-badge"></i> Student
         </h3>
         
         <form id="frmLoginStudent">
