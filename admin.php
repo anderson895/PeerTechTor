@@ -19,7 +19,7 @@
     <div class="bg-white shadow-lg rounded-lg w-full max-w-sm p-6">
         <div class="text-center mb-4">
             <a href="index.php">
-                <img src="assets/logo.webp" alt="Logo" class="mx-auto w-20">
+               <img src="assets/Logos/ICTHS.png" alt="Logo" class="mx-auto w-20">
             </a>
         </div>
         
@@ -48,6 +48,7 @@
             </div>
             <button type="submit" id="btnLoginGuidance Counselor/Principal" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">Login</button>
         </form>
+        
     </div>
     
     <script src="assets/js/app.js"></script>
