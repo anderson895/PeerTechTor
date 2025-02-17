@@ -86,20 +86,11 @@
             <!-- Search Input Field -->
             <input type="text" id="search_sentTo" placeholder="To"
                 class="w-full border-b-2 border-gray-300 p-2 text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all rounded-md">
-            
             <!-- Suggestion List -->
-            <ul id="searchResults" class="absolute w-full mt-1 bg-white border border-gray-300 shadow-md rounded-md max-h-60 overflow-auto hidden z-10 cursor-pointer">
-                <!-- Suggestions will be populated here -->
-            </ul>
-            
-            <!-- Hidden ID input field -->
+            <ul id="searchResults" class="absolute w-full mt-1 bg-white border border-gray-300 shadow-md rounded-md max-h-60 overflow-auto hidden z-10 cursor-pointer"></ul>
             <input type="hidden" id="selectedAdminId">
         </div>
 
-
-
-
-        
             <select class="w-full border-b-2 p-2 mt-2 text-gray-700 focus:outline-none">
                 <option value="" disabled selected>Please select a bullying type</option>
 
