@@ -8,10 +8,10 @@ if (isset($_SESSION['lrn'])) {
     $student_id = intval($_SESSION['id']); 
 
     // Gamitin ang check_account method
-    $result = $db->check_account($student_id);
+    $session_account = $db->check_account($student_id);
 
     // print_r($result);
-    if (!empty($result)) {
+    if (!empty($session_account)) {
       
     } else {
        header('location: student.php');
@@ -29,7 +29,7 @@ if (isset($_SESSION['lrn'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ADMIN</title>
+  <title>STUDENT</title>
   <link rel="icon" type="image/png" href="../assets/logo.webp">
   
   <script src="https://cdn.tailwindcss.com"></script>

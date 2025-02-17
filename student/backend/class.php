@@ -12,6 +12,41 @@ class global_class extends db_connect
 
 
 
+    public function CreateReport($IDsentFrom,$IDsentTo, $bullyingType, $messages,$imagesProof)
+    {
+        $query = $this->conn->prepare("INSERT INTO `report` (IDsentFrom,IDsentTo, bullyingType, messages, imagesProof) VALUES (?,?, ?, ?, ?)");
+        if ($query === false) {
+            return false; 
+        }
+        $query->bind_param("sssss",$IDsentFrom, $IDsentTo, $bullyingType, $messages,$imagesProof);
+    
+        if ($query->execute()) {
+            return true; 
+        } else {
+            return false; 
+        }
+    }
+
+
+
+    public function fetch_all_reports($session_account){
+        $query = $this->conn->prepare("SELECT report.*, admin.* FROM `report`
+        LEFT JOIN admin ON admin.id = report.IDsentTo
+        where report.IDsentFrom = '$session_account'
+        
+        ");
+
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+
+
+
+
+
+
     public function fetch_Admin_account($searchTerm = '') {
         // SQL query to fetch data from the admin table with search condition
         $query = "SELECT id, email FROM admin WHERE email LIKE '%" . $this->conn->real_escape_string($searchTerm) . "%'";
@@ -39,6 +74,10 @@ class global_class extends db_connect
         echo json_encode($items);
     }
     
+
+
+
+
     
 
 

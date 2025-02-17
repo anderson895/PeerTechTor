@@ -1,5 +1,81 @@
 $(document).ready(function() {
-    // Trigger AJAX search on keyup
+    $('.view-btn').click(function() {
+        var message = $(this).data('message');
+        var image = $(this).data('image');
+        
+        $('#report-message').text(message);
+        
+        if (image) {
+            $('#report-image-container').fadeIn(); 
+            $('#report-image').attr('src', '../upload_messages/' + image);
+        } else {
+            $('#report-image-container').fadeOut();
+        }
+        $('#ViewReportModal').fadeIn();
+    });
+
+    $('#close-modal').click(function() {
+        $('#ViewReportModal').fadeOut();
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    $("#frmCreateReport").submit(function (e) {
+        e.preventDefault();
+
+        $('.spinner').show();
+        $('#btnSendReport').prop('disabled', true);
+
+        var formData = new FormData(this); // Gamitin ang FormData para sa files
+        formData.append('requestType', 'CreateReport'); // Dagdagan ng custom data
+
+        $.ajax({
+            type: "POST",
+            url: "backend/end-points/controller.php",
+            data: formData,
+            processData: false,  // Huwag i-process ang data (para sa files)
+            contentType: false,  // Huwag mag-set ng content type (automatic na hahandle ito)
+            success: function (response) {
+                console.log(response);
+                if (response === "success") {
+                    alertify.success('Registration Successful');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000);
+                } else {
+                    $('.spinner').hide();
+                    $('#btnSendReport').prop('disabled', false);
+                    console.log(response);
+                    alertify.error('Registration failed, please try again.');
+                }
+            },
+        });
+    });
+    
+    
+    
+    
+    
     $('#search_sentTo').on('keyup', function() {
         let query = $(this).val();
         
