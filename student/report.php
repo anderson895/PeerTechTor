@@ -82,15 +82,33 @@
         <h2 class="text-xl font-semibold text-gray-700 mb-4">Create Report</h2>
         <!-- Modal Form for Adding Product -->
         <form id="frmCreateReport">
-            <input type="text" placeholder="To" class="w-full border-b-2 p-2 text-gray-700 focus:outline-none">
+        <div class="relative w-full">
+            <!-- Search Input Field -->
+            <input type="text" id="search_sentTo" placeholder="To"
+                class="w-full border-b-2 border-gray-300 p-2 text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all rounded-md">
+            
+            <!-- Suggestion List -->
+            <ul id="searchResults" class="absolute w-full mt-1 bg-white border border-gray-300 shadow-md rounded-md max-h-60 overflow-auto hidden z-10 cursor-pointer">
+                <!-- Suggestions will be populated here -->
+            </ul>
+            
+            <!-- Hidden ID input field -->
+            <input type="hidden" id="selectedAdminId">
+        </div>
+
+
+
+
+        
             <select class="w-full border-b-2 p-2 mt-2 text-gray-700 focus:outline-none">
-                <option value="" disabled selected>Select Subject</option>
-                <option value="Inquiry">Inquiry</option>
-                <option value="Support">Support</option>
-                <option value="Feedback">Feedback</option>
-                <option value="Other">Other</option>
+                <option value="" disabled selected>Please select a bullying type</option>
+
+                <option value="Verbal">Verbal</option>
+                <option value="Physical">Physical</option>
+                <option value="Cyber">Cyber</option>
+                <option value="Others">Others</option>
             </select>
-            <textarea placeholder="Compose your email..." class="w-full h-40 border p-2 mt-2 text-gray-700 focus:outline-none rounded-md"></textarea>
+            <textarea placeholder="Write Messages..." class="w-full h-40 border p-2 mt-2 text-gray-700 focus:outline-none rounded-md"></textarea>
            
             <div class="flex items-center mt-4 space-x-2">
                 <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Send</button>
