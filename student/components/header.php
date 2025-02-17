@@ -10,13 +10,14 @@ if (isset($_SESSION['lrn'])) {
     // Gamitin ang check_account method
     $result = $db->check_account($student_id);
 
+    // print_r($result);
     if (!empty($result)) {
       
     } else {
-       header('location: index.php');
+       header('location: student.php');
     }
 } else {
-   header('location: index.php');
+   header('location: student.php');
 }
 ?>
 
@@ -66,12 +67,12 @@ if (isset($_SESSION['lrn'])) {
         <span>Home</span>
     </a>
 
-    <a href="orderlist.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
+    <a href="report.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
         <span class="material-icons text-xl leading-none">assignment</span>
-        <span>Create Report</span>
+        <span>Report</span>
     </a>
 
-    <a href="return.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
+    <a href="settings.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
         <span class="material-icons text-xl leading-none">settings</span>
         <span>Settings</span>
     </a>
