@@ -10,12 +10,18 @@ class global_class extends db_connect
     }
 
 
-    public function get_count_report()
+    public function get_count_report($session_account)
 {
     $query = $this->conn->prepare("
-       SELECT  
-            COUNT(CASE WHEN `seen` = '1' THEN 1 END) AS Unseen
-        FROM `report` ;
+      SELECT  
+            COUNT(CASE WHEN `report`.`seen` = '1' THEN 1 END) AS Unseen,
+            COUNT(CASE WHEN `report`.`status` = '1' THEN 1 END) AS totalreport,
+            COUNT(CASE WHEN `student`.`status` = '1' THEN 1 END) AS totalstudent
+        FROM `report`
+        JOIN `student` ON `student`.`id` = `report`.`IDsentFrom`
+        where report.IDsentTo = $session_account
+      
+
 
     ");
 
@@ -41,8 +47,8 @@ class global_class extends db_connect
 
 
 
-    public function mark_all_seen(){
-        $query = $this->conn->prepare("UPDATE `report` SET `seen` = '0'");
+    public function mark_all_seen($admin_id){
+        $query = $this->conn->prepare("UPDATE `report` SET `seen` = '0' where IDsentTo = '$admin_id'");
 
         if ($query->execute()) {
             $result = $query->get_result();
@@ -52,10 +58,10 @@ class global_class extends db_connect
     
 
 
-    public function fetch_all_reports(){
+    public function fetch_teacher_reports($teacher_id){
         $query = $this->conn->prepare("SELECT report.*, admin.* FROM `report`
         LEFT JOIN admin ON admin.id = report.IDsentTo
-        where report.status='1'
+        where report.status='1' AND report.IDsentTo = '$teacher_id'
         ");
 
         if ($query->execute()) {

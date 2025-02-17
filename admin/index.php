@@ -10,14 +10,14 @@
     <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
         <img src="assets/images/icon/students.png" alt="students icon" class="mb-4 w-12 max-w-full" />
         <h3 class="text-gray-700 font-semibold text-lg">Total Student</h3>
-        <p class="text-blue-500 text-2xl font-bold count_users">3</p>
+        <p class="text-blue-500 text-2xl font-bold count_users" id="totalstudent">0</p>
     </div>
 
     <!-- Card for Total Sales -->
     <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
         <img src="assets/images/icon/document.png" alt="students icon" class="mb-4 w-12 max-w-full" />
         <h3 class="text-gray-700 font-semibold text-lg">Total Reports</h3>
-        <p class="text-blue-500 text-2xl font-bold totalSales">0</p>
+        <p class="text-blue-500 text-2xl font-bold " id="totalreport">0</p>
     </div>
 
    

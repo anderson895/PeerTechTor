@@ -1,7 +1,9 @@
 <?php 
 
-$fetch_all_reports = $db->fetch_all_reports();
-if ($fetch_all_reports): 
+$fetch_all_reports = $db->fetch_teacher_reports($session_account[0]['id']);
+
+
+if (mysqli_num_rows($fetch_all_reports) > 0): 
     $count=1;
         foreach ($fetch_all_reports as $report): ?>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2025 at 08:54 AM
+-- Generation Time: Feb 17, 2025 at 12:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -60,16 +60,17 @@ CREATE TABLE `report` (
   `messages` text DEFAULT NULL,
   `imagesProof` varchar(255) DEFAULT NULL,
   `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `status` int(11) NOT NULL DEFAULT 1 COMMENT '0=deleted,1=existing'
+  `status` int(11) NOT NULL DEFAULT 1 COMMENT '0=deleted,1=existing',
+  `seen` int(11) NOT NULL DEFAULT 1 COMMENT '0=seen,1=unseen'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `report`
 --
 
-INSERT INTO `report` (`report_id`, `IDsentTo`, `IDsentFrom`, `bullyingType`, `messages`, `imagesProof`, `date_added`, `status`) VALUES
-(9, 1, 4, 'Physical', 'awdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwad', 'report_67b2e3b7d92164.98049519.jpg', '2025-02-17 07:44:42', 1),
-(10, 1, 4, 'Others', 'gyjgyj', NULL, '2025-02-17 07:34:29', 1);
+INSERT INTO `report` (`report_id`, `IDsentTo`, `IDsentFrom`, `bullyingType`, `messages`, `imagesProof`, `date_added`, `status`, `seen`) VALUES
+(9, 1, 4, 'Physical', 'awdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwadawdwad', 'report_67b2e3b7d92164.98049519.jpg', '2025-02-17 11:04:55', 1, 0),
+(10, 1, 4, 'Others', 'gyjgyj', NULL, '2025-02-17 11:04:55', 1, 0);
 
 -- --------------------------------------------------------
 

@@ -6,11 +6,15 @@ const getOrdersCount = () => {
       type: 'GET',
       dataType: 'json',
       success: function(response) {
-        // console.log(response);
+          console.log(response.totalreport);
 
           let unseenCount = response.Unseen;
+          let totalreport = response.totalreport;
+          let totalstudent = response.totalstudent;
        
           $('#unseenCount').text(unseenCount);
+          $('#totalreport').text(totalreport);
+          $('#totalstudent').text(totalstudent);
 
           if (unseenCount > 0) {
             $('#unseenCount').show();

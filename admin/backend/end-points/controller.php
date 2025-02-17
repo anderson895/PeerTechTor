@@ -19,9 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "Error Messages .";
             }
         }else if ($_POST['requestType'] == 'mark_all_seen') {
-
+            session_start();
+            $admin_id = intval($_SESSION['id']); 
+        
+            $session_account = $db->check_account($admin_id);
             
-            $result = $db->mark_all_seen();
+            $result = $db->mark_all_seen($admin_id);
             
             if ($result) {
                 echo "success";

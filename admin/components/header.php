@@ -10,7 +10,9 @@ if (isset($_SESSION['id'])) {
     // Gamitin ang check_account method
     $session_account = $db->check_account($admin_id);
 
-    // print_r($result);
+
+    $full_name = $session_account[0]['f_name'] . ' ' . $session_account[0]['m_name'] . ' ' . $session_account[0]['l_name'];
+    // print_r($session_account);
     if (!empty($session_account)) {
       
     } else {
@@ -57,9 +59,11 @@ if (isset($_SESSION['id'])) {
   <!-- Sidebar -->
 <aside id="sidebar" class="bg-white shadow-lg w-64 lg:w-1/5 xl:w-1/6 p-6 space-y-6 lg:static fixed inset-y-0 left-0 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
   <!-- Hide Sidebar Button -->
-  <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-  <img src="../assets/logo.webp" alt="Logo" class="w-20 h-20 rounded-full border-2 border-gray-300 shadow-sm transform transition-transform duration-300 hover:scale-105"> <!-- Logo -->
- 
+  <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+  <div class="flex items-center space-x-4">
+    <img src="../assets/logo.webp" alt="Logo" class="w-20 h-20 rounded-full border-2 border-gray-300 shadow-sm transform transition-transform duration-300 hover:scale-105"> <!-- Logo -->
+    <span class="text-lg font-semibold text-gray-700">Welcome <strong><?=$full_name;?></strong> </span> <!-- Greeting -->
+  </div>
 </div>
 
 
