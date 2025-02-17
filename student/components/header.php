@@ -70,7 +70,7 @@ if (isset($_SESSION['lrn'])) {
 
 
 <nav class="space-y-4 text-left lg:text-left">
-    <a href="dashboard.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
+    <a href="index.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
         <span class="material-icons text-xl leading-none">home</span>
         <span>Home</span>
     </a>
@@ -80,10 +80,10 @@ if (isset($_SESSION['lrn'])) {
         <span>Report</span>
     </a>
 
-    <a href="settings.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
+    <!-- <a href="settings.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
         <span class="material-icons text-xl leading-none">settings</span>
         <span>Settings</span>
-    </a>
+    </a> -->
 
     <a href="logout.php">
         <button type="submit" class="flex items-center space-x-3 text-gray-600 hover:text-red-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
