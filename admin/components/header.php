@@ -4,20 +4,20 @@ include('backend/class.php');
 
 $db = new global_class();
 
-if (isset($_SESSION['lrn'])) {
-    $student_id = intval($_SESSION['id']); 
+if (isset($_SESSION['id'])) {
+    $admin_id = intval($_SESSION['id']); 
 
     // Gamitin ang check_account method
-    $session_account = $db->check_account($student_id);
+    $session_account = $db->check_account($admin_id);
 
     // print_r($result);
     if (!empty($session_account)) {
       
     } else {
-       header('location: student.php');
+       header('location: admin.php');
     }
 } else {
-   header('location: student.php');
+   header('location: admin.php');
 }
 ?>
 
@@ -40,9 +40,6 @@ if (isset($_SESSION['lrn'])) {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/alertify.min.js" integrity="sha512-JnjG+Wt53GspUQXQhc+c4j8SBERsgJAoHeehagKHlxQN+MtCCmFDghX9/AcbkkNRZptyZU4zC8utK59M5L45Iw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
  
-
-
-
 
 </head>
 <body class="bg-gray-100 font-sans antialiased">
@@ -75,12 +72,11 @@ if (isset($_SESSION['lrn'])) {
     <a href="report.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
         <span class="material-icons text-xl leading-none">assignment</span>
         <span>Report</span>
+        <!-- Notification Badge -->
+        <span id="unseenCount" class="bg-red-500 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center ">
+            0
+        </span>
     </a>
-
-    <!-- <a href="settings.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
-        <span class="material-icons text-xl leading-none">settings</span>
-        <span>Settings</span>
-    </a> -->
 
     <a href="logout.php">
         <button type="submit" class="flex items-center space-x-3 text-gray-600 hover:text-red-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">

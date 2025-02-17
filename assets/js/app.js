@@ -2,6 +2,50 @@ $(document).ready(function () {
 
 
 
+    $("#frmLoginGuidance").submit(function (e) {
+        e.preventDefault();
+    
+        $('.spinner').show();
+        $('#btnLoginGuidance').prop('disabled', true);
+        
+        var formData = $(this).serializeArray(); 
+        formData.push({ name: 'requestType', value: 'LoginAdmin' });
+        var serializedData = $.param(formData);
+    
+        // Perform the AJAX request
+        $.ajax({
+            type: "POST",
+            url: "backend/end-points/controller.php",
+            data: serializedData,  
+            success: function (response) {
+    
+                var data = JSON.parse(response);
+                console.log(response);
+    
+                if (data.status === "success") {
+                    alertify.success('Login Successful');
+    
+                    // Delay redirect by 2 seconds to allow message display
+                    setTimeout(function() {
+                        window.location.href = "admin/index.php";
+                    }, 2000);  
+    
+                }else if(data.status === "error"){
+    
+                  console.log(data)
+                  $('.spinner').hide();
+                  $('#btnLoginGuidance').prop('disabled', false);
+                  alertify.error(data.message);
+    
+                } else {
+                    $('.spinner').hide();
+                    $('#btnLoginGuidance').prop('disabled', false);
+                    console.error(response); 
+                    alertify.error('Registration failed, please try again.');
+                }
+            },
+        });
+    });
 
 
  
@@ -12,7 +56,7 @@ $(document).ready(function () {
     $('#btnLoginStudent').prop('disabled', true);
     
     var formData = $(this).serializeArray(); 
-    formData.push({ name: 'requestType', value: 'Login' });
+    formData.push({ name: 'requestType', value: 'LoginStudent' });
     var serializedData = $.param(formData);
 
     // Perform the AJAX request

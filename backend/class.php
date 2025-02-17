@@ -57,19 +57,10 @@ class global_class extends db_connect
 
 
 
-
-
-
-
-
-
-
-
-    public function Login($login_lrn, $login_password)
+    public function LoginStudent($login_lrn, $login_password)
     {
         // Hash the input password using SHA-256
         $hashedPassword = hash('sha256', $login_password);
-    
         // Prepare the SQL query
         $query = $this->conn->prepare("SELECT * FROM `student` WHERE `lrn` = ? AND `password` = ? AND status = '1'");
     
@@ -81,18 +72,50 @@ class global_class extends db_connect
             $result = $query->get_result();
             if ($result->num_rows > 0) {
                 $user = $result->fetch_assoc();
-    
-                // Start the session and store user info
                 session_start();
                 $_SESSION['lrn'] = $user['lrn'];
                 $_SESSION['id'] = $user['id'];
     
-                return $user;  // Return user data
+                return $user;
             } else {
-                return false;  // User not found or incorrect credentials
+                return false;
             }
         } else {
-            return false;  // Query failed to execute
+            return false;
+        }
+    }
+
+
+
+
+
+
+
+    public function LoginAdmin($email, $password)
+    {
+        // Hash the input password using SHA-256
+        $hashedPassword = hash('sha256', $password);
+        // Prepare the SQL query
+        $query = $this->conn->prepare("SELECT * FROM `admin` WHERE `email` = ? AND `password` = ? AND status = '1'");
+    
+        // Bind the email and the hashed password
+        $query->bind_param("ss", $email, $hashedPassword);
+        
+        // Execute the query
+        if ($query->execute()) {
+            $result = $query->get_result();
+            if ($result->num_rows > 0) {
+                $user = $result->fetch_assoc();
+                session_start();
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['id'] = $user['id'];
+    
+                return $user;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
         }
     }
 

@@ -19,12 +19,12 @@
         
         <form id="frmLoginStudent">
 
-        <!-- Spinner -->
-    <div class="spinner" id="spinner" style="display:none;">
-        <div class="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center">
-          <div class="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
-        </div>
-     </div>
+            <!-- Spinner -->
+            <div class="spinner" id="spinner" style="display:none;">
+                <div class="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center">
+                <div class="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+            </div>
 
 
             <div class="mb-4">

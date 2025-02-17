@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guidance Counselor/Principal Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-</head>
+<?php include "components/header.php" ?>
+
+
 <body class="bg-gray-900 flex items-center justify-center h-screen">
 
 <?php include "function/PageSpinner.php"; ?>
+
 
     <div class="bg-white shadow-lg rounded-lg w-full max-w-sm p-6">
         <div class="text-center mb-4">
@@ -27,12 +17,20 @@
             <i class="bi bi-person-badge"></i> Guidance Counselor/Principal
         </h3>
         
-        <form id="frmLoginGuidance Counselor/Principal">
+        <form id="frmLoginGuidance">
+
+               <!-- Spinner -->
+            <div class="spinner" id="spinner" style="display:none;">
+                <div class="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center">
+                    <div class="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+            </div>
+
             <div class="mb-4">
-                <label for="Guidance Counselor/Principal_code" class="block text-gray-600 font-medium">Username</label>
+                <label for="Guidance Counselor/Principal_code" class="block text-gray-600 font-medium">Email</label>
                 <div class="flex items-center border border-gray-300 rounded-md overflow-hidden">
                     <span class="px-3 bg-gray-100 text-gray-500"><i class="bi bi-person"></i></span>
-                    <input type="text" id="Guidance Counselor/Principal_code" name="Guidance Counselor/Principal_code" required placeholder="Enter your username" class="w-full p-2 focus:outline-none">
+                    <input type="email" id="Guidance Counselor/Principal_code" name="email" required placeholder="Enter your email" class="w-full p-2 focus:outline-none">
                 </div>
             </div>
             <div class="mb-4">
@@ -46,11 +44,9 @@
                 <input type="checkbox" id="rememberMe" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
                 <label for="rememberMe" class="ml-2 text-gray-600">Remember me</label>
             </div>
-            <button type="submit" id="btnLoginGuidance Counselor/Principal" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">Login</button>
+            <button type="submit" id="btnLoginGuidance" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">Login</button>
         </form>
         
     </div>
     
-    <script src="assets/js/app.js"></script>
-</body>
-</html>
+    <?php include "components/footer.php" ?>
