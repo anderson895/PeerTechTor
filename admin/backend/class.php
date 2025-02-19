@@ -59,8 +59,8 @@ class global_class extends db_connect
 
 
     public function fetch_teacher_reports($teacher_id){
-        $query = $this->conn->prepare("SELECT report.*, admin.* FROM `report`
-        LEFT JOIN admin ON admin.id = report.IDsentTo
+        $query = $this->conn->prepare("SELECT report.*, student.* FROM `report`
+        LEFT JOIN student ON student.id = report.IDsentFrom 
         where report.status='1' AND report.IDsentTo = '$teacher_id'
         ");
 

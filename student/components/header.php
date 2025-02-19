@@ -9,7 +9,7 @@ if (isset($_SESSION['lrn'])) {
 
     // Gamitin ang check_account method
     $session_account = $db->check_account($student_id);
-
+// print_r($session_account);
     // print_r($result);
     if (!empty($session_account)) {
       
@@ -62,7 +62,7 @@ if (isset($_SESSION['lrn'])) {
   <!-- Hide Sidebar Button -->
   <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
   <img src="../assets/logo.webp" alt="Logo" class="w-20 h-20 rounded-full border-2 border-gray-300 shadow-sm transform transition-transform duration-300 hover:scale-105"> <!-- Logo -->
- 
+<b> <?=ucfirst($session_account[0]['fname'])?> <?=$session_account[0]['mname']?> <?=ucfirst($session_account[0]['lname'])?></b>
 </div>
 
 

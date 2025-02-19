@@ -10,7 +10,7 @@ if (mysqli_num_rows($fetch_all_reports) > 0):
         <tr class="hover:bg-gray-50">
                         <td class="px-4 sm:px-6 py-4"><?= $count; ?></td>
                         <td class="px-4 sm:px-6 py-4"><?= date("F j, Y", strtotime($report['date_added'])); ?></td>
-                        <td class="px-4 sm:px-6 py-4"><?= $report['email']; ?></td>
+                        <td class="px-4 sm:px-6 py-4">LRN: <?= $report['lrn']; ?></td>
                         <td class="px-4 sm:px-6 py-4"><?= $report['bullyingType']; ?> </td>
                         <td class="px-4 sm:px-6 py-4">
                         <p class="ml-4"><?= (strlen($report['messages']) > 30) ? substr($report['messages'], 0, 30) . '...' : $report['messages']; ?></p>
