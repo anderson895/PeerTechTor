@@ -12,7 +12,7 @@
             </button>
 
             <!-- Search Input -->
-            <input type="text" id="searchInput" placeholder="Search campus..." 
+            <input type="text" id="searchInput" placeholder="Search report..." 
                 class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 w-full sm:w-auto"
                 onkeyup="searchTable()">
         </div>

@@ -11,6 +11,7 @@ if (isset($_SESSION['id'])) {
     $session_account = $db->check_account($admin_id);
 
 
+
     $full_name = $session_account[0]['f_name'] . ' ' . $session_account[0]['m_name'] . ' ' . $session_account[0]['l_name'];
     // print_r($session_account);
     if (!empty($session_account)) {
@@ -31,7 +32,7 @@ if (isset($_SESSION['id'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STUDENT</title>
+  <title>ADMIN</title>
   <link rel="icon" type="image/png" href="../assets/logo.webp">
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -81,6 +82,17 @@ if (isset($_SESSION['id'])) {
             0
         </span>
     </a>
+
+
+    <?php 
+        if ($session_account[0]['position'] == 'super admin') { ?>
+            <a href="manageuser.php" class="flex items-center space-x-3 text-gray-600 hover:text-blue-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">
+                <span class="material-icons text-xl leading-none">person_add</span>
+                <span>Manage user</span>
+            </a>
+    <?php } ?>
+
+    
 
     <a href="logout.php">
         <button type="submit" class="flex items-center space-x-3 text-gray-600 hover:text-red-500 hover:bg-gray-100 px-4 py-2 rounded-md transition-all duration-300">

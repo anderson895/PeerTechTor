@@ -109,6 +109,7 @@ class global_class extends db_connect
                 session_start();
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['id'] = $user['id'];
+                $_SESSION['position'] = $user['position'];
     
                 return $user;
             } else {
