@@ -1,8 +1,14 @@
 <?php
+
+// define("db_host", "localhost");
+// define("db_user", "root");
+// define("db_pass", "");
+// define("db_name", "peertechtor");
+
 define("db_host", "localhost");
-define("db_user", "root");
-define("db_pass", "");
-define("db_name", "peertechtor");
+define("db_user", "u443167785_peertechtor");
+define("db_pass", "Peertechtor2025");
+define("db_name", "u443167785_peertechtor");
 
 
 class db_connect
