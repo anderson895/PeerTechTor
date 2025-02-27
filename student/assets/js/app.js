@@ -58,7 +58,7 @@ $(document).ready(function() {
             success: function (response) {
                 console.log(response);
                 if (response === "success") {
-                    alertify.success('Registration Successful');
+                    alertify.success('Report Sent Successful');
                     setTimeout(function () {
                         location.reload();
                     }, 2000);
@@ -66,7 +66,7 @@ $(document).ready(function() {
                     $('.spinner').hide();
                     $('#btnSendReport').prop('disabled', false);
                     console.log(response);
-                    alertify.error('Registration failed, please try again.');
+                    alertify.error('Sending failed, please try again.');
                 }
             },
         });
