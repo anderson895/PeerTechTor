@@ -4,7 +4,7 @@
 <section class="h-screen bg-cover bg-center flex items-center justify-center text-white text-center px-6 md:px-0" style="background-image: url('assets/1.jpg');">
     <div class="bg-black bg-opacity-50 p-6 md:p-10 rounded-xl max-w-lg">
         <h1 class="text-3xl md:text-5xl font-bold mb-4">Welcome to PeerTechTor</h1>
-        <p class="text-lg md:text-xl">Discover amazing content and explore endless possibilities.</p>
+        <p class="text-lg md:text-xl">Collaboration: The platform encourages teamwork between students, teachers, and administrators to improve school safety.</p>
     </div>
 </section>
 
@@ -32,10 +32,6 @@
                 <p class="text-gray-600 mt-2">Real-Time Alerts: Urgent reports trigger immediate notifications, ensuring a fast response.</p>
             </div>
             
-            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
-                
-                <p class="text-gray-600 mt-2">Collaboration: The platform encourages teamwork between students, teachers, and administrators to improve school safety.</p>
-            </div>
         </div>
     </div>
 </section>
