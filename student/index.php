@@ -15,15 +15,26 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
                 <h3 class="text-xl font-semibold">Feature 1</h3>
-                <p class="text-gray-600 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="text-gray-600 mt-2">Key Features:
+                Anonymity: Students can report bullying anonymously to avoid retaliation</p>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
                 <h3 class="text-xl font-semibold">Feature 2</h3>
-                <p class="text-gray-600 mt-2">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="text-gray-600 mt-2">Easy-to-Use Interface: The platform is simple, making it easy for students to submit reports.</p>
             </div>
             <div class="bg-white p-6 shadow-lg rounded-lg text-center">
                 <h3 class="text-xl font-semibold">Feature 3</h3>
-                <p class="text-gray-600 mt-2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                <p class="text-gray-600 mt-2">Centralized System: Teachers and administrators can view and manage all reports in one place, allowing them to act quickly.</p>
+            </div>
+
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <h3 class="text-xl font-semibold">Feature 4</h3>
+                <p class="text-gray-600 mt-2">Real-Time Alerts: Urgent reports trigger immediate notifications, ensuring a fast response.</p>
+            </div>
+            
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                
+                <p class="text-gray-600 mt-2">Collaboration: The platform encourages teamwork between students, teachers, and administrators to improve school safety.</p>
             </div>
         </div>
     </div>

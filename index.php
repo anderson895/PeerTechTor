@@ -38,7 +38,7 @@
                     <div class="mb-4 text-blue-500">
                         <span class="material-icons text-5xl">admin_panel_settings</span>
                     </div>
-                    <h5 class="text-lg font-semibold">Guidance Counselor/Principal</h5>
+                    <h5 class="text-lg font-semibold">Teachers Counselors/Principal</h5>
                     <a href="admin.php" class="mt-4 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition">Login As Admin</a>
                 </div>
             </div>
